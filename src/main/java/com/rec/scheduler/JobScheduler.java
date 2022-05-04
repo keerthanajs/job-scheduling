@@ -21,6 +21,7 @@ public class JobScheduler {
 
     public void submit(Job job){
         readyQueue.offer(job);
+        LogUtils.log("["+job.name()+"] Job submitted.");
     }
 
     public void waitAndShutdown(){

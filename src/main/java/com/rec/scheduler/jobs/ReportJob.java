@@ -4,7 +4,7 @@ import com.rec.scheduler.Job;
 
 public class ReportJob implements Job {
     @Override
-    public void run() {
+    public void execute() {
         System.out.println("Starting ReportJob");
         try {
             Thread.sleep(executionTimeMillis());

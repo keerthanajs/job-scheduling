@@ -4,7 +4,7 @@ import com.rec.scheduler.Job;
 
 public class ConsolidatedAccountStatementJob implements Job {
     @Override
-    public void run() {
+    public void execute() {
         System.out.println("Preparing consolidated account statement");
         try {
             Thread.sleep(executionTimeMillis());
