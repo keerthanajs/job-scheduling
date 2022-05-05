@@ -2,13 +2,14 @@ package org.rec.os.scheduler;
 
 import org.rec.os.scheduler.strategy.SchedulingStrategy;
 
+import java.util.Date;
 import java.util.Queue;
 
 public class CoreThread extends Thread{
-    private Queue<Job> readyQueue;
+    private Queue<JobDetails> readyQueue;
     private volatile boolean shutdownInitiated;
 
-    public CoreThread(int id, Queue<Job> readyQueue) {
+    public CoreThread(int id, Queue<JobDetails> readyQueue) {
         this.readyQueue = readyQueue;
         setName("Core#"+(id+1));
     }
@@ -19,10 +20,11 @@ public class CoreThread extends Thread{
             //run the jobs from the ready queue as long as the queue is not empty
             while(!readyQueue.isEmpty()){
                 //retrieve the next job
-                Job nextJob = SchedulingStrategy.getDefault().findNextJob(readyQueue);
+                JobDetails jobDetails = SchedulingStrategy.getDefault().findNextJob(readyQueue);
                 //run the next job in this core
-                if(nextJob!=null){
-                    nextJob.execute();
+                if(jobDetails!=null){
+                    jobDetails.getJob().execute();
+                    jobDetails.setCompletionTime(new Date());
                 }
             }
             //sleep 1 millisecond before checking the queue again

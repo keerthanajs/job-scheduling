@@ -7,14 +7,10 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 /**
- * TODO
- * Job id to be created
- * Job Arrival time to be created
- * SJF to be implemented
  */
 public class JobScheduler {
     private Processor processor;
-    private Queue<Job> readyQueue;
+    private Queue<JobDetails> readyQueue;
 
     public JobScheduler(int parallelCount){
         readyQueue = new ArrayDeque<>(); //FCFS
@@ -27,8 +23,9 @@ public class JobScheduler {
     }
 
     public void submit(Job job){
-        readyQueue.offer(job);
-        LogUtils.log("["+job.name()+"] Job submitted.");
+        JobDetails jd = new JobDetails(job);
+        readyQueue.offer(jd);
+        LogUtils.log(jd+" Job submitted.");
     }
 
     public void waitAndShutdown(){

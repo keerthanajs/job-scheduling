@@ -1,12 +1,12 @@
 package org.rec.os.scheduler.strategy;
 
-import org.rec.os.scheduler.Job;
+import org.rec.os.scheduler.JobDetails;
 
 import java.util.Queue;
 
 public class FirstComeFirstServeStrategy implements SchedulingStrategy {
     @Override
-    public Job findNextJob(Queue<Job> jobQueue) {
+    public JobDetails findNextJob(Queue<JobDetails> jobQueue) {
         return jobQueue.poll();
     }
 }

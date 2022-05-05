@@ -4,10 +4,10 @@ import java.util.Queue;
 
 public class Processor {
     private int numberOfCores;
-    private Queue<Job> readyQueue;
+    private Queue<JobDetails> readyQueue;
     private CoreThread[] coreThreads;
 
-    public Processor(int numberOfCores, Queue<Job> readyQueue){
+    public Processor(int numberOfCores, Queue<JobDetails> readyQueue){
         this.numberOfCores = numberOfCores;
         this.readyQueue = readyQueue;
     }

@@ -1,7 +1,6 @@
 package org.rec.os.scheduler.strategy;
 
-import org.rec.os.scheduler.Job;
-import org.rec.os.utils.LogUtils;
+import org.rec.os.scheduler.JobDetails;
 
 import java.util.Queue;
 
@@ -14,5 +13,5 @@ public interface SchedulingStrategy {
             return new FirstComeFirstServeStrategy();
         }
     }
-    Job findNextJob(Queue<Job> readyQueue);
+    JobDetails findNextJob(Queue<JobDetails> readyQueue);
 }
