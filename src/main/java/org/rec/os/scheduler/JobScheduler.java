@@ -18,6 +18,9 @@ public class JobScheduler {
     public JobScheduler(int parallelCount){
         readyQueue = new ArrayDeque<>(); //FCFS
         processor = new Processor(parallelCount, readyQueue);
+    }
+
+    public void start(){
         processor.powerOn();
     }
 

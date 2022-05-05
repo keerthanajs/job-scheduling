@@ -10,9 +10,10 @@ public class Main {
         js.submit(new SimpleJob("Report", 2000));
         js.submit(new SimpleJob("AccountSummary", 5000));
         js.submit(new SimpleJob("TaxCalculation", 3000));
-        js.submit(new SimpleJob("BatchProcessing", 10000));
-        js.submit(new SimpleJob("Indexing", 2000));
-        js.submit(new SimpleJob("Backup", 5000));
+        js.submit(new SimpleJob("BatchProcessing", 6000));
+        js.submit(new SimpleJob("Indexing", 1000));
+        js.submit(new SimpleJob("Backup", 4000));
+        js.start();
         js.waitAndShutdown();
     }
 }
