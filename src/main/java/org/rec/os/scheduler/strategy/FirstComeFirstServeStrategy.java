@@ -4,7 +4,7 @@ import org.rec.os.scheduler.Job;
 
 import java.util.Queue;
 
-public class FirstComeFirstServeStrategy implements Strategy {
+public class FirstComeFirstServeStrategy implements SchedulingStrategy {
     @Override
     public Job findNextJob(Queue<Job> jobQueue) {
         return jobQueue.poll();

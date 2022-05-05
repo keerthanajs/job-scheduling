@@ -1,8 +1,6 @@
 package org.rec.os.scheduler;
 
-import org.rec.os.scheduler.strategy.FirstComeFirstServeStrategy;
-import org.rec.os.scheduler.strategy.ShortestJobFirstStrategy;
-import org.rec.os.scheduler.strategy.Strategy;
+import org.rec.os.scheduler.strategy.SchedulingStrategy;
 
 import java.util.Queue;
 
@@ -21,9 +19,7 @@ public class CoreThread extends Thread{
             //run the jobs from the ready queue as long as the queue is not empty
             while(!readyQueue.isEmpty()){
                 //retrieve the next job
-                Strategy strategy = new FirstComeFirstServeStrategy();
-                Job nextJob = strategy.findNextJob(readyQueue);
-
+                Job nextJob = SchedulingStrategy.getDefault().findNextJob(readyQueue);
                 //run the next job in this core
                 if(nextJob!=null){
                     nextJob.execute();

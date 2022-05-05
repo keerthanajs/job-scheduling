@@ -4,7 +4,7 @@ import org.rec.os.scheduler.Job;
 
 import java.util.Queue;
 
-public class ShortestJobFirstStrategy implements Strategy {
+public class ShortestJobFirstStrategy implements SchedulingStrategy {
     @Override
     public Job findNextJob(Queue<Job> jobQueue) {
         //find job with shortest execution time
