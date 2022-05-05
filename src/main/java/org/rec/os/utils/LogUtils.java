@@ -1,4 +1,4 @@
-package com.rec.scheduler;
+package org.rec.os.utils;
 
 import java.util.Date;
 

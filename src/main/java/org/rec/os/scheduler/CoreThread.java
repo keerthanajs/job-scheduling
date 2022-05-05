@@ -1,4 +1,4 @@
-package com.rec.scheduler;
+package org.rec.os.scheduler;
 
 import java.util.Queue;
 

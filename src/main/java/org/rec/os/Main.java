@@ -1,9 +1,8 @@
-package com.rec.scheduler;
+package org.rec.os;
 
 
-import com.rec.scheduler.jobs.ConsolidatedAccountStatementJob;
-import com.rec.scheduler.jobs.ReportJob;
-import com.rec.scheduler.jobs.SimpleJob;
+import org.rec.os.jobs.SimpleJob;
+import org.rec.os.scheduler.JobScheduler;
 
 public class Main {
     public static void main(String[] args) {

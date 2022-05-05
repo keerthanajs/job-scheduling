@@ -1,4 +1,6 @@
-package com.rec.scheduler;
+package org.rec.os.scheduler;
+
+import org.rec.os.utils.LogUtils;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

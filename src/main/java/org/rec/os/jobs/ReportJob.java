@@ -1,6 +1,6 @@
-package com.rec.scheduler.jobs;
+package org.rec.os.jobs;
 
-import com.rec.scheduler.Job;
+import org.rec.os.scheduler.Job;
 
 public class ReportJob implements Job {
     @Override

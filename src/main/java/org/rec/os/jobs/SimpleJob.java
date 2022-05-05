@@ -1,7 +1,7 @@
-package com.rec.scheduler.jobs;
+package org.rec.os.jobs;
 
-import com.rec.scheduler.Job;
-import com.rec.scheduler.LogUtils;
+import org.rec.os.scheduler.Job;
+import org.rec.os.utils.LogUtils;
 
 public class SimpleJob implements Job {
     private final String name;
