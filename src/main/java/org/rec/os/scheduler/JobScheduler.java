@@ -1,5 +1,6 @@
 package org.rec.os.scheduler;
 
+import org.rec.os.scheduler.strategy.SchedulingStrategy;
 import org.rec.os.utils.LogUtils;
 
 import java.util.ArrayDeque;
@@ -21,6 +22,7 @@ public class JobScheduler {
     }
 
     public void start(){
+        LogUtils.log("Using "+ SchedulingStrategy.getDefault().getClass().getSimpleName());
         processor.powerOn();
     }
 
