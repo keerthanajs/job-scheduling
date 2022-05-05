@@ -3,12 +3,11 @@ package org.rec.os;
 
 import org.rec.os.jobs.SimpleJob;
 import org.rec.os.scheduler.JobScheduler;
-import org.rec.os.scheduler.strategy.SchedulingStrategy;
-import org.rec.os.utils.LogUtils;
 
 public class Main {
     public static void main(String[] args) {
-        JobScheduler js = new JobScheduler(1);
+        int cores = Integer.getInteger("cores", 1);
+        JobScheduler js = new JobScheduler(cores);
         js.submit(new SimpleJob("Report", 2000));
         js.submit(new SimpleJob("AccountSummary", 5000));
         js.submit(new SimpleJob("TaxCalculation", 3000));

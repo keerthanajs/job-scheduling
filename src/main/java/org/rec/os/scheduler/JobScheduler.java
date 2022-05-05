@@ -15,6 +15,7 @@ public class JobScheduler {
     public JobScheduler(int parallelCount){
         readyQueue = new ArrayDeque<>(); //FCFS
         processor = new Processor(parallelCount, readyQueue);
+        LogUtils.log("Running with "+parallelCount+" core(s)");
     }
 
     public void start(){
