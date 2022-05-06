@@ -28,6 +28,12 @@ public class Processor {
         for(int i=0;i<numberOfCores;i++){
             this.coreThreads[i].shutdown();
         }
+        //wait for threads to shutdown
+        for(int i=0;i<numberOfCores;i++){
+            try {
+                this.coreThreads[i].join();
+            } catch (InterruptedException e) {}
+        }
     }
 
 }
