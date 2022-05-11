@@ -31,4 +31,9 @@ public class SimpleJob implements Job {
     public int executionTimeMillis() {
         return executionTime;
     }
+
+    @Override
+    public String toString() {
+        return name() + "-" + executionTime;
+    }
 }
