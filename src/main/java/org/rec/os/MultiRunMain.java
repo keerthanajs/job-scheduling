@@ -4,7 +4,7 @@ import org.rec.os.jobs.SimpleJob;
 import org.rec.os.scheduler.Job;
 import org.rec.os.scheduler.JobScheduler;
 import org.rec.os.scheduler.strategy.SchedulingStrategy;
-import org.rec.os.ui.BarChart;
+import org.rec.os.ui.Chart;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,8 +37,8 @@ public class MultiRunMain {
         System.out.println("CORES : "+Arrays.toString(CORES_ARRAY));
         System.out.println("SJSF  : "+Arrays.toString(sjsfTimes));
         System.out.println("FCFS  : "+Arrays.toString(fcfsTimes));
-        BarChart.setData(CORES_ARRAY, sjsfTimes, fcfsTimes);
-        BarChart.main(args);
+        Chart.setData(CORES_ARRAY, sjsfTimes, fcfsTimes);
+        Chart.main(args);
     }
 
     static long runJobs(int noOfCores){
