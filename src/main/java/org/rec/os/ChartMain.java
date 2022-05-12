@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class MultiRunMain {
+public class ChartMain {
     static final int NO_OF_JOBS = 10;
     static Job[] jobs = new Job[NO_OF_JOBS];
     static int[] CORES_ARRAY = {1, 2, 4, 6, 8, 10};
@@ -26,18 +26,18 @@ public class MultiRunMain {
     }
 
     public static void main(String[] args) {
-        long[] sjsfTimes = new long[CORES_ARRAY.length];
+        long[] sjfTimes = new long[CORES_ARRAY.length];
         long[] fcfsTimes = new long[CORES_ARRAY.length];
 
         for(int i=0;i<CORES_ARRAY.length;i++){
-            sjsfTimes[i] = runShortestJobFirstWithCores(CORES_ARRAY[i]);
+            sjfTimes[i] = runShortestJobFirstWithCores(CORES_ARRAY[i]);
             fcfsTimes[i] = runFirstComeFirstServe(CORES_ARRAY[i]);
         }
         System.out.println("Durations: "+Arrays.asList(jobs));
         System.out.println("CORES : "+Arrays.toString(CORES_ARRAY));
-        System.out.println("SJSF  : "+Arrays.toString(sjsfTimes));
+        System.out.println("SJSF  : "+Arrays.toString(sjfTimes));
         System.out.println("FCFS  : "+Arrays.toString(fcfsTimes));
-        Chart.setData(CORES_ARRAY, sjsfTimes, fcfsTimes);
+        Chart.setData(CORES_ARRAY, sjfTimes, fcfsTimes);
         Chart.main(args);
     }
 
