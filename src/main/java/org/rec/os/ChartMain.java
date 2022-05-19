@@ -5,6 +5,7 @@ import org.rec.os.scheduler.Job;
 import org.rec.os.scheduler.JobScheduler;
 import org.rec.os.scheduler.strategy.SchedulingStrategy;
 import org.rec.os.ui.Chart;
+import org.rec.os.ui.LineChartApplication;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,7 +18,7 @@ public class ChartMain {
     static int[] CORES_ARRAY = {1, 2, 4, 6, 8, 10};
     static {
         for(int i=1;i<=jobs.length;i++){
-            jobs[i-1] = new SimpleJob("Job-"+i, i*100);
+            jobs[i-1] = new SimpleJob("Job-"+i, i*10);
         }
         List<Job> jobList = new ArrayList<>();
         jobList.addAll(Arrays.asList(jobs));
@@ -37,8 +38,12 @@ public class ChartMain {
         System.out.println("CORES : "+Arrays.toString(CORES_ARRAY));
         System.out.println("SJSF  : "+Arrays.toString(sjfTimes));
         System.out.println("FCFS  : "+Arrays.toString(fcfsTimes));
+
         Chart.setData(CORES_ARRAY, sjfTimes, fcfsTimes);
         Chart.main(args);
+
+        //LineChartApplication.setData(CORES_ARRAY, sjfTimes, fcfsTimes);
+        //LineChartApplication.main(args);
     }
 
     static long runJobs(int noOfCores){
